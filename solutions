@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+
+#all problems ran as functions
+
+
+#problem one
+def p_one(filename):
+    #create empty list
+    water = []
+    date_time = []
+    #open file
+    with open(filename) as f:
+        #read the headers
+        f.readline()
+        #iterate through lines and append to empty lists
+        for line in f:
+            row = line.split(',')
+            water.append(row[1])
+            date_time.append(row[0])
+    #find highest water level
+    highest = max(water)
+    #locate index of highest water level and return matching date/time
+    when = date_time[water.index(highest)]
+    print("water level: {} date: {}".format(highest, when))
+    
+#problem two
+def p_two(filename):
+    import pandas as pd
+    df = pd.read_csv(filename)
+    print("highest water level: {}".format(df[' Water Level'].max()))
+
+#probelm three
+def p_three(filename):
+    #create empty list
+    water = []
+    date_time = []
+    #open file
+    with open(filename) as f:
+        #iterate through lines and append to empty lists
+        f.readline()
+        for line in f:
+            row = line.split(',')
+            water.append(row[1])
+            date_time.append(row[0])
+    #create empty lists
+    speed = []
+    difference = []
+    #ignoring last seven items, iterate through water to calculate difference and speed
+    for i in range(0,len(water) - 7):
+        measurement = float(water[i+6]) - float(water[i])
+        difference.append(measurement)
+        speed.append(measurement/6)
+    #determine the fastest speed
+    fastest = max(speed)
+    #determine when this occured based on index
+    when = date_time[speed.index(fastest)]
+    water = water[speed.index(fastest)]
+    print("water level: {} date: {}".format(water, when))
+    print("fastest speed: {}".format(fastest))
+    print("change in water level: {}".format(max(difference)))
