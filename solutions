@@ -58,3 +58,23 @@ def p_three(filename):
     print("water level: {} date: {}".format(water, when))
     print("fastest speed: {}".format(fastest))
     print("change in water level: {}".format(max(difference)))
+    
+    
+    ## PEER REVIEW: Great job with the code, I like your use of functions, think in certain areas like with Pandas you 
+    #definitely had efficient functions. I cloned your directory and tried to run the code and was unsuccessful. I kept getting
+    #stuck with the following error line 7: syntax error near unexpected token `('
+    #I even tried to add a line of code filename= with the file name I was using. Still didn't work.
+    #So my biggest comment would be to ensure you code works and it relatively easy for someone else to run 
+    #For problem one you didn't strip any empty strings, not sure if that would make any different, again because I couldn't
+    #run the code to double check.
+    
+    #Problem 2 is a much more efficient way to fun the code than I had, although I'm not sure this way would work. Again, 
+    #I couldn't run the code. Not sure if the use of the function made it easier for you to just print the max value but 
+    #it seems like you would need a function to look for the max. Maybe the .max() works. Not sure. 
+    
+    #Problem 3 was a cool approach by using .append I used the sort function for this problem but your way seems like it 
+    #would work. Also good use of comments in this section to expain what various lines of code were doing 
+    
+    #Overall I think your approach was good to use functions and to encorporate different funtions like lists and appends. 
+    #I wish I was able to run the code successfully, not sure what the issue was with opening the file but like I said
+    #it may be worth checking future code to make sure another person can successfully run everything. Good work. 
